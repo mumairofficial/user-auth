@@ -16,15 +16,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: installing yarn
+        run: |
+          npm install -g yarn
+      - name: installing dependencies for monorepo
+        run: |
+          yarn install
       - name: building react portal
         run: |
-          npm install -g yarn
-          yarn install
           yarn portal:build --if-present
-      - name: building api
-        run: |
-          npm install -g yarn
-          yarn install
-          yarn api:build --if-present
+        # - name: building api
+        #   run: |
+        #     yarn api:build --if-present
         env:
           CI: true
