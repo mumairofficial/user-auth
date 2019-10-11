@@ -5,8 +5,9 @@
     "portal:start": "cd packages/portal && yarn start",
     "portal:build": "cd packages/portal && yarn build",
     "portal:test": "cd packages/portal && yarn test",
-    "api:start": "cd packages/api && yarn start",
-    "start": "concurrently \"npm:portal:start\""
+    "api:start": "cd packages/api && yarn start:dev",
+    "api:build": "cd packages/api && yarn build",
+    "start": "concurrently \"npm:api:start\" \"npm:portal:start\""
   },
   "devDependencies": {
     "concurrently": "^5.0.0",
