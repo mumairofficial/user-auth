@@ -24,9 +24,9 @@ jobs:
           yarn install
       - name: building react portal
         run: |
-          yarn portal:build --if-present
+          yarn portal:build
       - name: building api
         run: |
-          yarn api:build --if-present
+          yarn api:build
         env:
           CI: true
