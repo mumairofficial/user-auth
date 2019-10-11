@@ -25,8 +25,8 @@ jobs:
       - name: building react portal
         run: |
           yarn portal:build --if-present
-        # - name: building api
-        #   run: |
-        #     yarn api:build --if-present
+      - name: building api
+        run: |
+          yarn api:build --if-present
         env:
           CI: true
