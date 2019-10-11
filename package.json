@@ -9,6 +9,9 @@
     "api:build": "cd packages/api && yarn build",
     "start": "concurrently \"npm:api:start\" \"npm:portal:start\""
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "concurrently": "^5.0.0",
     "husky": "^3.0.8",
