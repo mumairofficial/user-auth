@@ -16,11 +16,15 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, build, and test
+      - name: building react portal
         run: |
           npm install -g yarn
           yarn install
           yarn portal:build --if-present
+      - name: building api
+        run: |
+          npm install -g yarn
+          yarn install
           yarn api:build --if-present
         env:
           CI: true
